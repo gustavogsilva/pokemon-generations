@@ -1,0 +1,16 @@
+nav ul li {
+  list-style-type: none;
+}
+
+nav ul li button{
+  display: flex;
+  width: 70px;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: blue;
+  margin: 0 20px;
+  color: white;
+  border: none;
+}
