@@ -1,3 +1,6 @@
+ul {
+  padding: 0;
+}
 li {
   list-style-type: none;
 }
@@ -16,9 +19,19 @@ nav ul li button {
   color: white;
   border: none;
 }
-.pokemon-species li a{
+
+.generation-details > li {
+  margin: 10px 0;
+}
+.pokemon-species li a {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 10px 10px;
+}
+.pokemon-types li, .version-groups li {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 0 10px;
 }
