@@ -1,11 +1,15 @@
+@import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);
+
 ul {
   padding: 0;
 }
 li {
   list-style-type: none;
 }
-nav ul li {
-  list-style-type: none;
+.nav-title {
+  font-family: "Pokemon";
+  font-size: 1.3rem;
+  color: #142F77;
 }
 nav ul li button {
   display: flex;
@@ -14,12 +18,16 @@ nav ul li button {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  background-color: blue;
   margin: 0 20px;
-  color: white;
   border: none;
+  background-color: white;
+  background-image: url(./img/pokeball_2.png);
+  background-size: cover;
+  font-weight: bold;
 }
-
+nav ul li button:hover {
+  background-image: url(./img/pokeball_3.png);
+}
 .generation-details > li {
   margin: 10px 0;
 }

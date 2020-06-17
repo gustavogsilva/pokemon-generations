@@ -12,8 +12,8 @@ function App() {
   return (
     <StateProvider initialState={initialState} reducer={reducer}>
       <div className="container">
-        <img className="d-block mx-auto mt-3 mb-5" src={pokemonLogo} alt="Pokémon"/>
-        <p className="text-center">Select the Pokémon game generation you want to view more details</p>
+        <img className="d-block mx-auto mt-3 mb-4" src={pokemonLogo} alt="Pokémon"/>
+        <p className="nav-title text-center mb-4">Select the Pokémon game generation you want to view more details:</p>
         <Nav/>
         <GameGenerationDetails/>
       </div>
