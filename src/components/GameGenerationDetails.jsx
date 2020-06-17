@@ -1,7 +1,9 @@
 import React from 'react'
+import { doGetRequest } from '../helpers/apiHelper'
 
 export default function GameGenerationDetails() {
 
+  doGetRequest('/generation/1/').then(console.log);
   return (
     <div className="border">
       <ul>
