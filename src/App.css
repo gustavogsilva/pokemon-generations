@@ -1,16 +1,24 @@
 @import url(//db.onlinewebfonts.com/c/f4d1593471d222ddebd973210265762a?family=Pokemon);
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap');
 
 ul {
   padding: 0;
 }
+
 li {
   list-style-type: none;
 }
-.nav-title {
+
+button {
+  outline: none !important;
+}
+
+nav h2 {
   font-family: "Pokemon";
   font-size: 1.3rem;
-  color: #142F77;
+  color: #1F419C;
 }
+
 nav ul li button {
   display: flex;
   width: 70px;
@@ -18,28 +26,55 @@ nav ul li button {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  margin: 0 20px;
+  margin: 10px 20px;
   border: none;
   background-color: white;
-  background-image: url(./img/pokeball_2.png);
+  background-image: url(./img/pokeball_1.png);
   background-size: cover;
   font-weight: bold;
 }
-nav ul li button:hover {
+
+nav ul li button:hover, nav .active-item {
   background-image: url(./img/pokeball_3.png);
 }
+
+.generation-details {
+  font-family: 'Balsamiq Sans', cursive;
+  font-size: 1.3rem;
+  color: #1F419C;
+  font-weight: bold;
+  border: 1px solid #1F419C;
+  border-radius: 10px;
+}
+
+.generation-details span{
+  color: #ffc003;
+}
+
 .generation-details > li {
   margin: 10px 0;
 }
-.pokemon-species li a {
+
+.pokemon-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 10px 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
 }
-.pokemon-types li, .version-groups li {
-  border: 1px solid black;
+
+.pokemon-card img {
+  background-color: #f2f2f2;
+}
+
+.badge-item {
+  background-color: #FFE76B;
+  border: 1px solid #B0590B;
   border-radius: 5px;
   margin: 10px;
   padding: 0 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: #B0590B;
 }

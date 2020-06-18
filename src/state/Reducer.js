@@ -7,8 +7,6 @@ export const reducer = (state, action) => {
       return {
         ...state,
         gameGenerationDetails: { 
-          show: true,
-          loading: false,
           name: action.payload.name,
           mainRegion: action.payload.main_region.name,
           versionGroups: action.payload.version_groups,

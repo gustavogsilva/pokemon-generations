@@ -1,39 +1,57 @@
 import React from 'react'
 import { useStateContext } from "../state/Context";
+import { capitalize } from '../helpers/stringHelper'
 
 export default function GameGenerationDetails() {
 
   const [{ gameGenerationDetails }] = useStateContext();
   const { name, mainRegion, versionGroups, pokemonTypes, pokemonSpecies } = gameGenerationDetails;
 
+  function getIdFromUrl(url) {
+    const startCut = url.indexOf('species/') + 8;
+    return url.slice(startCut, -1);
+  }
+
+  function sortById(a, b) {
+    const aId = Number(getIdFromUrl(a.url));
+    const bId = Number(getIdFromUrl(b.url));
+    if (aId < bId) return -1;
+    if (aId > bId) return 1;
+    return 0;
+  }
+  pokemonSpecies.sort(sortById);
+
   return (
-    <div className="border">
-      <ul className="generation-details py-2 px-4">
-        <li>Name: {name} </li>
-        <li>Main Region: {mainRegion}</li>
+      <ul className="generation-details py-2 px-4 mt-5">
+        <li>Name: <span>{capitalize(name)}</span></li>
+        <li>Main Region: <span>{capitalize(mainRegion)}</span></li>
         <li>
-          Version Groups:
+          <p className="m-0">Version Groups: {versionGroups.length}</p>
           <ul className="version-groups d-flex flex-wrap p-0">
-            {versionGroups.map((versionGroup,i) => <li key={i} >{versionGroup.name}</li>)}
+            {versionGroups.map((versionGroup,i) => <li className="badge-item" key={i} >{versionGroup.name}</li>)}
           </ul>
         </li>
         <li>
-          New Pokémon Types:
+          <p className="m-0">New Pokémon Types: {pokemonTypes.length}</p>
           <ul className="pokemon-types d-flex flex-wrap p-0">
-            {pokemonTypes.map((pokemonType,i) => <li key={i} >{pokemonType.name}</li>)}
+            {pokemonTypes.map((pokemonType,i) => <li className="badge-item" key={i} >{pokemonType.name}</li>)}
           </ul>
         </li>
         <li>
-          New Pokémon Species:
-          <ul className="pokemon-species d-flex flex-wrap p-0">
+          <p>New Pokémon Species: {pokemonSpecies.length}</p>
+          <ul className="pokemon-species d-flex flex-wrap justify-content-around p-0">
             {pokemonSpecies.map((pokemonSpecie,i) => {
-              const startCut = pokemonSpecie.url.indexOf('species/') + 8;
-              const id = pokemonSpecie.url.slice(startCut, -1);
+              const id = getIdFromUrl(pokemonSpecie.url);
               return (
                 <li key={i}>
-                  <a className="border rounded" href="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/413.png">
-                    <img className="border-bottom" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} alt=""/> 
-                    <p className="text-dark py-2 m-0">{pokemonSpecie.name}</p>
+                  <a className="pokemon-card border rounded"
+                    href={`https://pokeapi.co/api/v2/pokemon/${id}/`} 
+                    title={pokemonSpecie.name} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <img className="border-bottom" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`} alt=""/>
+                    <p className="text-dark py-2 m-0">{capitalize(pokemonSpecie.name)}</p>
                   </a>
                 </li>
               )
@@ -41,6 +59,5 @@ export default function GameGenerationDetails() {
           </ul>
         </li>
       </ul>
-    </div>
   )
 }
