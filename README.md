@@ -1,3 +1,7 @@
+## Pokemon Generations
+
+This is a app shows the details of each generation of Pokémon games in an organized form
+
 ## Setup:
 
 1. Clone this repo
