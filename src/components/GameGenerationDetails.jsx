@@ -45,7 +45,7 @@ export default function GameGenerationDetails() {
               return (
                 <li key={i}>
                   <a className="pokemon-card border rounded"
-                    href={`https://pokeapi.co/api/v2/pokemon/${id}/`} 
+                    href={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`} 
                     title={pokemonSpecie.name} 
                     target="_blank" 
                     rel="noopener noreferrer"
