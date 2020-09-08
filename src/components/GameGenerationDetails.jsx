@@ -65,6 +65,7 @@ export default function GameGenerationDetails() {
                   className="pokemon-card border rounded"
                   href={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`}
                   title={pokemonSpecie.name}
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img
